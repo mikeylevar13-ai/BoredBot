@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BoredBot</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#111827">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="card">
+    <header>
+      <h1>BoredBot</h1>
+      <p class="sub">Tap for a tiny mission you can do right now.</p>
+    </header>
+
+    <section class="controls">
+      <label>Time
+        <select id="time">
+          <option value="2">2 min</option>
+          <option value="5">5 min</option>
+          <option value="10" selected>10 min</option>
+          <option value="20">20 min</option>
+          <option value="60">60 min</option>
+        </select>
+      </label>
+
+      <label>Energy
+        <select id="energy">
+          <option value="low">Low</option>
+          <option value="med" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+      </label>
+
+      <label>Location
+        <select id="place">
+          <option value="any" selected>Anywhere</option>
+          <option value="home">Home</option>
+          <option value="outside">Outside</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="mission">
+      <div id="missionText" class="missionText">Choose your settings, then tap “Give me a mission”.</div>
+      <div class="buttons">
+        <button id="gen">Give me a mission</button>
+        <button id="swap" class="ghost" disabled>Swap</button>
+      </div>
+
+      <div class="buttons">
+        <button id="done" class="ok" disabled>Done</button>
+        <button id="reset" class="danger">Reset streak</button>
+      </div>
+
+      <div class="meta">
+        <span>Streak: <b id="streak">0</b></span>
+        <span>Completed: <b id="count">0</b></span>
+      </div>
+    </section>
+
+    <section class="history">
+      <h2>History</h2>
+      <ul id="historyList"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
